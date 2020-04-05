@@ -64,5 +64,5 @@ typings/
 # sqlite database
 db/database.sqlite
 
-
+package-lock.json
 uploads/
