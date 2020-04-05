@@ -1,0 +1,27 @@
+{
+  "name": "iincho",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.1.1",
+    "eris": "^0.11.2",
+    "dotenv": "^8.2.0",
+    "sqlite3": "^4.1.1",
+    "sequelize": "^5.21.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5573/discordbot_Eris.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5573/discordbot_Eris/issues"
+  },
+  "homepage": "https://github.com/5573/discordbot_Eris#readme"
+}
