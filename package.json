@@ -1,7 +1,6 @@
 {
   "name": "iincho",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "discord.js": "^12.1.1",
@@ -24,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/5573/discordbot_Eris/issues"
   },
-  "homepage": "https://github.com/5573/discordbot_Eris#readme"
+  "homepage": "https://github.com/5573/discordbot_Eris#readme",
+  "description": ""
 }
