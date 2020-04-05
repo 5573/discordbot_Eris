@@ -18,19 +18,40 @@ bot.on("voiceChannelJoin", async (member, newChannel) => {
       let newStatus = await UserStatus.create({
         user_id: member.id,
         name: member.username,
-        guild_id: member.guild.id
+        guild_id: member.guild.id,
+        io: 1
       });
     } catch(ex) {
       console.log(ex);
     }
 });
 
-bot.on("voiceChannelLeave", (member, oldChannel) => {
+bot.on("voiceChannelLeave", async (member, oldChannel) => {
         bot.createMessage(process.env.CHANNEL1, time.formatTime() + " に " + (member.nick ? member.nick : member.username)  + " が " + oldChannel.name + " から退出しました。");
+        try {
+          let newStatus = await UserStatus.create({
+            user_id: member.id,
+            name: member.username,
+            guild_id: member.guild.id,
+            io: 0
+          });
+        } catch(ex) {
+          console.log(ex);
+        }
 });
 
-bot.on("voiceChannelSwitch", (member, newChannel, oldChannel) => {
+bot.on("voiceChannelSwitch", async (member, newChannel, oldChannel) => {
         bot.createMessage(process.env.CHANNEL1, time.formatTime() + " に " + (member.nick ? member.nick : member.username) + " が " + oldChannel.name + " から " + newChannel.name + " に移動しました。");
+        try {
+          let newStatus = await UserStatus.create({
+            user_id: member.id,
+            name: member.username,
+            guild_id: member.guild.id,
+            io: 3
+          });
+        } catch(ex) {
+          console.log(ex);
+        }
 });
 
 
