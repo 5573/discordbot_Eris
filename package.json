@@ -1,14 +1,14 @@
 {
   "name": "iincho",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "discord.js": "^12.1.1",
-    "eris": "^0.11.2",
     "dotenv": "^8.2.0",
-    "sqlite3": "^4.1.1",
-    "sequelize": "^5.21.6"
+    "eris": "^0.11.2",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.6",
+    "sqlite3": "^4.1.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/5573/discordbot_Eris/issues"
   },
-  "homepage": "https://github.com/5573/discordbot_Eris#readme"
+  "homepage": "https://github.com/5573/discordbot_Eris#readme",
+  "description": ""
 }
