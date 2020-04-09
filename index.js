@@ -55,4 +55,12 @@ bot.on("voiceChannelSwitch", async (member, newChannel, oldChannel) => {
 });
 
 
+// この機能はネタ
+
+// bot.on("typingStart", (member, channel) => {
+//   // console.log(channel.username);
+//   // console.log(member.id);
+//   bot.createMessage(member.id, channel.username + "さん が書き込み中だぞ！")
+// })
+
 bot.connect();
