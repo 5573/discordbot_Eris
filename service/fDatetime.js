@@ -3,6 +3,7 @@ const formatTime = () => {
         if (!format) {
             format = 'YYYY/MM/DD hh:mm:ss'
         }
+        date.setHours(date.getHours() + 9);
         format = format.replace(/YYYY/g, date.getFullYear());
         format = format.replace(/MM/g, ('0' + (date.getMonth() + 1)).slice(-2));
         format = format.replace(/DD/g, ('0' + date.getDate()).slice(-2));
