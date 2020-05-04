@@ -12,7 +12,7 @@ client.on('message', message => {
     if(message.author.bot){
         return;
     }
-    client.channels.cache.filter(ch => console.log(ch.name))
+
     if (message.channel.name == ("anonymous")){
         message.delete();
         const ch_name = "anonymous";
@@ -26,27 +26,36 @@ client.on('message', message => {
           thumbnail: {
               url: "https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.png"
           }
-          // fields: [
-          //     {
-          //         name: "サーバー",
-          //         value: `${message.guild.name} (${(message.guild.id)})`,
-          //         inline: true
-          //     },
-          //     {
-          //         name: "チャンネル",
-          //         value: `${message.channel.name} (${message.channel.id})`,
-          //         inline: true
-          //     },
-          //     {
-          //         name: "ユーザー",
-          //         value: `${message.author.username} (${message.author.id})`,
-          //         inline: true
-          //     }
-          // ]
         }
       }))
     }
   })
+
+  client.on('message', async message => {
+      if(message.author.bot){
+          return;
+      }
+
+      if (message.channel.name == ("public-chat")){
+          message.delete();
+          const ch_name = "public-chat";
+          const meu = client.channels.cache.filter(ch => ch.name === ch_name)
+          meu.forEach(async function(ch) {
+            try {
+              const webhooks = await ch.fetchWebhooks()
+              const webhook = webhooks.first()
+              webhook.send(message, {
+                username: message.author.username,
+          			avatarURL: message.author.displayAvatarURL(),
+          			// embeds: [embed],
+          		});
+            } catch (err){
+              console.error('Error trying to send: ', err);
+            }
+          })
+        }
+      })
+
 
 
 
