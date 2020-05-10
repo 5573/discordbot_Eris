@@ -27,6 +27,8 @@ bot.on("voiceChannelJoin", async (member, newChannel) => {
     } catch(ex) {
       console.log(ex);
     }
+  } else if(newChannel.guild.id === process.env.GUILD_ID2) {
+    bot.createMessage(process.env.CHANNEL2, time.formatTime() + " に " + (member.nick ? member.nick : member.username) + " が " + newChannel.name + " に入室しました。");
   }
 
 });
@@ -45,6 +47,8 @@ bot.on("voiceChannelLeave", async (member, oldChannel) => {
     } catch(ex) {
       console.log(ex);
     }
+  } else if(oldChannel.guild.id === process.env.GUILD_ID2) {
+    bot.createMessage(process.env.CHANNEL2, time.formatTime() + " に " + (member.nick ? member.nick : member.username)  + " が " + oldChannel.name + " から退出しました。");
   }
 });
 
@@ -62,6 +66,8 @@ bot.on("voiceChannelSwitch", async (member, newChannel, oldChannel) => {
     } catch(ex) {
       console.log(ex);
     }
+  } else if(newChannel.guild.id === process.env.GUILD_ID2) {
+    bot.createMessage(process.env.CHANNEL2, time.formatTime() + " に " + (member.nick ? member.nick : member.username) + " が " + oldChannel.name + " から " + newChannel.name + " に移動しました。");
   }
 });
 
